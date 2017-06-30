@@ -58,13 +58,6 @@ showAllDetails(blueFiesta);
 
 //////////////////////////////////////////////////////////////////////////////
 
-
-function multiply (multiplier1, multiplier2) {
-  return multiplier1 * multiplier2;
-};
-
-///////////////////////////////////////////////////////////////////////////////
-
 // Export Functions
 exports.showAllDetails = showAllDetails;
-exports.multiply = multiply;
+
