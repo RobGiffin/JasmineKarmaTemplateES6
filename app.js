@@ -1,29 +1,9 @@
 /*jshint esversion: 6 */
 'use strict';
 
+var Car = require("./car");
+
 //////////////////////////////////////////////////////////////////////////////
-
-// create a Car Object Class with methods
-class Car {
-    constructor(colour,make,model) {
-        this.colour = colour;
-        this.type = "motorvehicle";
-        this.make = make;
-        this.model = model;
-    }
-
-    showDescription() {
-        console.log("-- Method from Car --");
-        console.log("This is a "+this.colour+" "+this.type+" and does this this.");
-        console.log("");
-    }
-
-    showDetailedDescription() {
-        console.log("-- Method from Car --");
-        console.log("This "+this.type+" is a "+this.model+" "+this.make+", who's colour is "+this.colour);
-        console.log("");
-    }   
-}
 
 // create a red Vectra
 let redVectra = new Car("red","Vauxhall","Vectra");
@@ -47,9 +27,11 @@ class FastCar extends Car {
     }
 
     howFastCanItGo() {
+        var output = "The "+this.colour+" "+this.type+" has a top speed of "+this.topSpeed; 
         console.log("-- Method from FastCar --");
-        console.log("The "+this.colour+" "+this.type+" has a top speed of "+this.topSpeed);
+        console.log(output);
         console.log("");
+        return output;
     }
 }
 
@@ -63,10 +45,11 @@ yellowFerrari.howFastCanItGo();
 // create a function and pass in the object, calling it's methods
 function showAllDetails(car) {
     console.log("-- Showing All Details --");
-    car.showDetailedDescription();
+    var output = car.showDetailedDescription();
     if (car instanceof FastCar) {
-        car.howFastCanItGo();
+        output += car.howFastCanItGo();
     }
+    return output;
 }
 
 showAllDetails(yellowFerrari);
@@ -74,3 +57,14 @@ showAllDetails(blueFiesta);
 
 
 //////////////////////////////////////////////////////////////////////////////
+
+
+function multiply (multiplier1, multiplier2) {
+  return multiplier1 * multiplier2;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Export Functions
+exports.showAllDetails = showAllDetails;
+exports.multiply = multiply;

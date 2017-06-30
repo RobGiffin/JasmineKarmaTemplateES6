@@ -12,10 +12,16 @@
     "typings": "^2.1.1"
   },
   "devDependencies": {
+    "brfs": "^1.4.3",
+    "browserify": "^14.4.0",
     "jasmine": "^2.6.0",
-    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma": "^1.7.0",
+    "karma-browserify": "^5.1.1",
     "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.4",
-    "karma-spec-reporter": "0.0.31"
+    "karma-spec-reporter": "0.0.31",
+    "require": "^2.4.20",
+    "watchify": "^3.9.0"
   }
 }
